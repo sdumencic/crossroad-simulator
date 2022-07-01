@@ -1,0 +1,13 @@
+.semaphore {
+  height: 200px;
+  width: 70px;
+  background: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 3px solid black;
+  position: fixed;
+  z-index: 10;
+}
