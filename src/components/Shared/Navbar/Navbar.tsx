@@ -8,9 +8,6 @@ const Navbar = () => {
       <Link to="/game" className="navbar-item">
         Simulacija
       </Link>
-      <Link to="/settings" className="navbar-item">
-        Postavke
-      </Link>
       <Link to="/" className="navbar-item">
         Home
       </Link>

@@ -6,15 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
-const root = document.getElementById("root");
+// NOTE: React 18 error
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 
-render(
-  <React.StrictMode>
+// React 18 bug/feature breaks useEffect with
+root.render(
+  <>
+    {/* <React.StrictMode> */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  root
+    {/* </React.StrictMode> */}
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
