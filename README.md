@@ -1,3 +1,28 @@
+# Crossroad simulator with RaspberryPI 3B
+
+API: [https://github.com/sdumencic/crossroad-simulator-FastAPI-raspberryPI](https://github.com/sdumencic/crossroad-simulator-FastAPI-raspberryPI)
+
+Crossroad simulator with one main and one side road.
+Main road is always green, except when:
+- the red button in the GUI has been pressed
+- there is ano light at the photoresistor for 5 seconds representing a car
+- the button has been pressed representing a pedestrian at the crosswalk
+
+# GUI
+<img src="images/1.png" alt="crossroad">
+
+<img src="images/2.png" alt="crossroad">
+
+<img src="images/3.png" alt="crossroad">
+
+# Components
+- 1 whiteboard
+- 1 photoresistor
+- 6 LEDs
+- 7 resistors
+- 1 button
+- 17 wires
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
