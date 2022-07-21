@@ -9,15 +9,27 @@ import axios from "axios";
 const IMAGE = "/images/crossing1.png";
 const REDBUTTON = "/images/redbutton.png";
 const GREENBUTTON = "/images/greenbutton.png";
+const CAR = "/images/car.png";
+
+let car = false;
 
 const clickButton = (color: "red" | "green" | "off") => {
   axios
-    .post("http://raspberrypi:8000/set", {
+    .post("http://192.168.183.114:8000/set", {
       state: color,
     })
     .then((res) => {
       console.log(res);
     });
+
+  if (color === "red") {
+    car = true;
+    setTimeout(() => {
+      car = false;
+    }, 10000);
+  } else {
+    car = false;
+  }
 };
 
 const GamePage = () => {
@@ -29,7 +41,7 @@ const GamePage = () => {
   useEffect(() => {
     console.log("Setting up webSocket");
 
-    ws.current = new WebSocket("ws://raspberrypi:8000/ws");
+    ws.current = new WebSocket("ws://192.168.183.114:8000/ws");
 
     ws.current.onopen = (_) => console.log("Socket opened");
 
@@ -92,6 +104,9 @@ const GamePage = () => {
         style={{ bottom: "70px", right: "400px" }}
         lights={status.lights[1]}
       />
+      <div className={car ? "car" : "no-car"}>
+        <img src={CAR} />
+      </div>
     </div>
   );
 };
